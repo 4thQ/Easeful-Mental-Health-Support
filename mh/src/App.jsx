@@ -103,7 +103,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="header">
-        <div className="logo">MindfulCare</div>
+        <div className="logo">Easeful</div>
         <nav className="nav">
           <ul>
             <li>
@@ -278,9 +278,9 @@ function App() {
             <div className="testimonial-container">
               <div className="testimonial-card">
                 <div className="testimonial-quote">
-                  "MindfulCare helped me find the courage to speak about my
-                  anxiety. The resources and support have been invaluable on my
-                  journey to recovery."
+                  "Easeful helped me find the courage to speak about my anxiety.
+                  The resources and support have been invaluable on my journey
+                  to recovery."
                 </div>
                 <div className="testimonial-author">
                   <div className="author-avatar">
@@ -333,16 +333,76 @@ function App() {
         <section id="about" className="about">
           <div className="container">
             <h2>About Us</h2>
-            <p>
-              At MindfulCare, we believe mental health is just as important as
-              physical health. Our team of dedicated professionals is committed
-              to providing accessible mental health resources and support to
-              everyone who needs it.
+            <p className="about-tagline">
+              Bringing peace to minds, one person at a time
             </p>
-            <p>
-              Founded in 2023, we've helped thousands of people find the support
-              they need on their journey to better mental wellbeing.
-            </p>
+
+            <div className="about-content">
+              <div className="about-mission">
+                <div className="about-icon">🌱</div>
+                <h3>Our Mission</h3>
+                <p>
+                  At Easeful, we believe mental health is just as important as
+                  physical health. Our team of dedicated professionals is
+                  committed to providing accessible mental health resources and
+                  support to everyone who needs it.
+                </p>
+              </div>
+
+              <div className="about-story">
+                <div className="about-icon">📖</div>
+                <h3>Our Story</h3>
+                <p>
+                  Founded in 2023 by Nirajan Gurung, a mental health advocates
+                  who saw a need for more accessible and stigma-free support
+                  services. What began as a small support group has blossomed
+                  into a comprehensive resource for thousands seeking guidance
+                  on their mental health journey.
+                </p>
+              </div>
+
+              <div className="about-values">
+                <div className="about-icon">💫</div>
+                <h3>Our Values</h3>
+                <ul className="values-list">
+                  <li>
+                    <span>Compassion</span> - We approach every individual with
+                    understanding and warmth
+                  </li>
+                  <li>
+                    <span>Accessibility</span> - Mental health support should be
+                    available to everyone
+                  </li>
+                  <li>
+                    <span>Excellence</span> - We strive for the highest
+                    standards in our care and resources
+                  </li>
+                  <li>
+                    <span>Community</span> - Building connections that foster
+                    healing and growth
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="about-stats">
+              <div className="stat-item">
+                <div className="stat-number">5,000+</div>
+                <div className="stat-label">People Helped</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">20+</div>
+                <div className="stat-label">Professional Therapists</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">98%</div>
+                <div className="stat-label">Satisfaction Rate</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">24/7</div>
+                <div className="stat-label">Support Available</div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -354,76 +414,98 @@ function App() {
             <div className="contact-info">
               <div className="contact-item">
                 <div className="contact-icon">📧</div>
-                <p>support@mindfulcare.com</p>
+                <p>support@easeful.com</p>
               </div>
               <div className="contact-item">
                 <div className="contact-icon">📞</div>
-                <p>1-800-MINDFUL</p>
+                <p>1-800-EASEFUL</p>
+              </div>
+              <div className="contact-item">
+                <div className="contact-icon">📍</div>
+                <p>42 Frith Street, Soho, London W1D 4SF</p>
               </div>
             </div>
 
-            <div className="contact-wrapper">
-              <h3>Send Us a Message</h3>
-              <div className="contact-form-container">
-                {formSubmitted ? (
-                  <div className="success-message">
-                    <p>
-                      Thank you for your message! We'll get back to you soon.
-                    </p>
-                  </div>
-                ) : (
-                  <form className="contact-form" onSubmit={handleSubmit}>
-                    <div className="form-row">
+            <div className="contact-content">
+              <div className="contact-wrapper">
+                <h3>Send Us a Message</h3>
+                <div className="contact-form-container">
+                  {formSubmitted ? (
+                    <div className="success-message">
+                      <p>
+                        Thank you for your message! We'll get back to you soon.
+                      </p>
+                    </div>
+                  ) : (
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label htmlFor="name">Name</label>
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="email">Email</label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </div>
+                      </div>
                       <div className="form-group">
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="subject">Subject</label>
                         <input
                           type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
+                          id="subject"
+                          name="subject"
+                          value={formData.subject}
                           onChange={handleInputChange}
                           required
                         />
                       </div>
                       <div className="form-group">
-                        <label htmlFor="email">Email</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
+                        <label htmlFor="message">Message</label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows="4"
+                          value={formData.message}
                           onChange={handleInputChange}
                           required
-                        />
+                        ></textarea>
                       </div>
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="subject">Subject</label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="message">Message</label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows="4"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                      ></textarea>
-                    </div>
-                    <button type="submit" className="primary-btn">
-                      Send Message
-                    </button>
-                  </form>
-                )}
+                      <button type="submit" className="primary-btn">
+                        Send Message
+                      </button>
+                    </form>
+                  )}
+                </div>
+              </div>
+
+              <div className="contact-map">
+                <h3>Find Us</h3>
+                <div className="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.8987028049297!2d-0.13590508431735474!3d51.51305621782242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d49f4b7f9b%3A0xe736d302b4383916!2sSoho%2C%20London!5e0!3m2!1sen!2suk!4v1712407689157!5m2!1sen!2suk"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Soho Office Location"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -432,7 +514,7 @@ function App() {
 
       <footer>
         <div className="footer-content">
-          <div className="footer-logo">MindfulCare</div>
+          <div className="footer-logo">Easeful</div>
           <p>
             Providing support and resources for mental health and wellbeing.
           </p>
@@ -456,7 +538,9 @@ function App() {
               Contact
             </a>
           </div>
-          <p className="copyright">© 2023 MindfulCare. All rights reserved.</p>
+          <p className="copyright">
+            © 2023 Easeful by Nirajan. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
