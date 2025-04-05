@@ -465,13 +465,17 @@ main {
   border-radius: var(--border-radius);
   font-family: inherit;
   font-size: 0.95rem;
-  transition: border-color 0.3s;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  color: var(--text-color);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
+  background-color: #f0f7f4;
+  box-shadow: 0 0 0 2px rgba(90, 143, 123, 0.2);
 }
 
 .contact-form .primary-btn {
