@@ -1,6 +1,5 @@
 # Easeful: Mental Health Support Platform
 
-![Easeful Logo](/src/assets/logo.png)
 ## Overview
 
 Easeful is a comprehensive mental health support platform designed to provide accessible resources, professional support, and a welcoming community for individuals seeking mental health assistance.
